@@ -1,9 +1,11 @@
 import 'package:ecom_app/constant.dart';
+import 'package:ecom_app/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  static const String id = 'welcome_screen';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -18,9 +20,21 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 'E-Com App',
                 style: TextStyle(
-                  fontSize: 40.0,
+                  fontSize: 50.0,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Koho',
+                  color: kPrimaryColor,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text(
+                  'India\'s Biggest Marketplace',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Koho',
+                  ),
                 ),
               ),
               SizedBox(
@@ -39,7 +53,9 @@ class WelcomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, LoginScreen.id);
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('Log In'),
