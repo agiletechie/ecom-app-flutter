@@ -1,3 +1,4 @@
+import 'package:ecom_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecom_app/screens/welcome_screen.dart';
 import 'constant.dart';
@@ -13,10 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      home: WelcomeScreen(),
+      initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+      },
       theme: ThemeData(
         primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kInitialScreenColor,
+        scaffoldBackgroundColor: kTextColor,
         // fontFamily: kFontFamily.fontFamily,
       ),
     );
